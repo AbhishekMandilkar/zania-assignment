@@ -15,6 +15,8 @@ function App() {
     list,
     selectedItem,
     sensors,
+    loading,
+    lastUpdated,
     handleDragEnd,
     handleSelect,
     handleClose,
@@ -27,6 +29,10 @@ function App() {
         <li>Drag and drop to reorder</li>
         <li>Press escape to close modal</li>
       </ul>
+      <div>
+        <h2>Loading: {loading ? "true" : "false"}</h2>
+        <div>Last Updated: {lastUpdated}</div>
+      </div>
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}

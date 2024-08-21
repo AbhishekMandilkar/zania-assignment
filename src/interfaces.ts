@@ -4,3 +4,8 @@ export interface Item {
     position: number;
     image: string;
 };
+
+export enum LocalStorageKeys {
+    list = "list",
+    lastUpdated = "lastUpdated",
+}
