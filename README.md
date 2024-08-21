@@ -36,7 +36,8 @@ Description:
 	•	Handlers:
 	•	handleDragEnd: This function is triggered when the drag-and-drop action ends. It checks if the dragged item has been moved to a different position in the list. If so, it updates the list’s state using the arrayMove function to reorder the items.
 	•	handleSelect: A callback function to select an item, setting the selectedItem state.
-	•	handleClose: A callback function to deselect the item, resetting the selectedItem state to undefined.
+	•	handleClose: A callback function to deselect the item, resetting the selectedItem state to undefined
+	•	Stores the list and lastupdated time in local storage
 
 Return:
 
@@ -70,6 +71,6 @@ Parameters:
 
 Return:
 
-	•	The hook does not return any value but sets up and manages the keydown event listener.
+	•	The hook does not return any value but sets up and manages the keydown event listener.	
 
 This hook encapsulates the logic for handling specific keydown events, making it reusable across different components.
