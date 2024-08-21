@@ -28,6 +28,7 @@ function App() {
         <li>Load time is simulated 500ms</li>
         <li>Drag and drop to reorder</li>
         <li>Press escape to close modal</li>
+        <li>Data is stored in local storage with its last updated time</li>
       </ul>
       <div>
         <h2>Loading: {loading ? "true" : "false"}</h2>
