@@ -1,8 +1,9 @@
 import {useCallback, useState} from "react";
 import {Item} from "../interfaces";
 import {INIT_DATA} from "../constants";
-import {arrayMove} from "@dnd-kit/sortable";
+// import {arrayMove} from "@dnd-kit/sortable";
 import {DragEndEvent, PointerSensor, useSensor, useSensors} from "@dnd-kit/core";
+import {reorder} from "../utils";
 
 const useDraggableList = () => {
   const [list, setList] = useState<Item[]>(INIT_DATA);
@@ -25,7 +26,7 @@ const useDraggableList = () => {
         const oldIndex = items.findIndex((item) => item.type === active.id);
         const newIndex = items.findIndex((item) => item.type === over.id);
 
-        return arrayMove(items, oldIndex, newIndex);
+        return reorder(items, oldIndex, newIndex);
       });
     }
   }
