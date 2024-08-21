@@ -1,0 +1,28 @@
+.list-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  /* display: flex;
+  flex-wrap: wrap; */
+  border: 1px solid #ccc;
+}
+
+.draggable-item {
+  background-color: rgb(234, 234, 234);
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  align-self: center;
+}
+
+.draggable-item > img {
+  border-radius: 10px;
+}
+
+.draggable-item > p {
+  font-size: 16;
+}
