@@ -1,30 +1,32 @@
-import {Item} from "../interfaces";
+import { useSortable } from "@dnd-kit/sortable";
+import { Item } from "../interfaces";
 import AsyncImage from "./AsyncImage";
 import LoadingSpinner from "./LoadingSpinner";
-import {DraggableProvided, DraggableStateSnapshot} from "react-beautiful-dnd";
-import {getItemStyle} from "../utils";
-
+import { CSS } from "@dnd-kit/utilities";
 interface CardProps {
   item: Item;
-  draggableProvided: DraggableProvided;
-  draggableSnapshot: DraggableStateSnapshot;
   onSelect: (item: Item) => void;
 }
 
 const Card = (props: CardProps) => {
-  const { item, draggableProvided, draggableSnapshot, onSelect } = props;
+  const { item, onSelect } = props;
+
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: props.item.type });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
 
   return (
     <div
-      ref={draggableProvided.innerRef}
-      {...draggableProvided.draggableProps}
-      {...draggableProvided.dragHandleProps}
-      style={getItemStyle(
-        draggableSnapshot.isDragging,
-        draggableProvided.draggableProps.style
-      )}
-      className="draggable-item"
+      ref={setNodeRef}
+      style={style}
+      {...attributes}
       onClick={() => onSelect(item)}
+      {...listeners}
+      className="draggable-item"
     >
       <AsyncImage
         imageProps={{

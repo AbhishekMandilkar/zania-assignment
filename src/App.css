@@ -17,12 +17,13 @@
   flex-direction: column;
   border-radius: 20px;
   align-self: center;
+  cursor: pointer;
 }
 
-.draggable-item > img {
+.draggable-item img {
   border-radius: 10px;
 }
 
-.draggable-item > p {
+.draggable-item  p {
   font-size: 16;
 }
