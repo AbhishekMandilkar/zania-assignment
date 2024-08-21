@@ -103,6 +103,7 @@ const useDraggableList = () => {
 
   useEffect(() => {
     GET();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSelect = useCallback(
